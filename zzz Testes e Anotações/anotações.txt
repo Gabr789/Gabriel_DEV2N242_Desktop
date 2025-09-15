@@ -1,0 +1,37 @@
+
+Cada exercício deve ficar em submenus dentro de menus
+Criar um main que dê acesso a todos os exercícios
+Separar modulo1 de modulo2
+
+
+
+
+Quando for pôr uma imagem, considere pôr ela separada do frame principal
+Considere também pôr um frame dentro de outro
+Pense em criar subframes com widgets dentro ou fora deles
+Se for usar uma imagem, tente personalizar o resto da janela a partir das cores da imagem
+
+
+
+
+No main_modulo2, além de fazer a janela com menus e submenus que permitam acessar os exercícios,
+fazer algo que o usuário possa ver ou mexer no resto da janela.
+Poderia ser feito um jogo clicker.
+Ou um gif interessante.
+Ou alguma outra opção.
+Criatividade kkkkkkkkk.
+
+Fazer essa parte dos menus com janelas diferentes. Se sobrar tempo, fazer em frames.
+
+
+
+
+Reorganizar os exercícios das listas 4 e 5 de Tkinter para se encaixarem no main principal.
+Utilizar a lógica do Master em TODOS os exercícios.
+Fazer de uma forma em que eu realmente consiga organizar e achar cada arquivo, com padrões.
+
+
+
+
+
+Fazer uma cópia dos arquivos do material em uma outra pasta, para poder examinar isoladamente.
