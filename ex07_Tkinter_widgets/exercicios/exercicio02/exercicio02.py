@@ -20,6 +20,8 @@ class Ex02:
 
         self.senha = "1234"
 
+        caminho = os.path.dirname(__file__)
+
 
         def testar():
             valor = senha.get()
@@ -35,11 +37,8 @@ class Ex02:
         frame = tk.Frame(self.janela, **Estilos02.estiloFrameLogin())
         frame.pack(fill="x")
 
-        caminho = os.getcwd()
-        print(caminho)
 
-
-        self.imagem = tk.PhotoImage(file=r"C:\Users\GABRIELNUNESCORREA\Desktop\POO\modulo2\ex07_Tkinter_widgets\exercicios\exercicio02\avatar_login.png")
+        self.imagem = tk.PhotoImage(file=caminho + r"\avatar_login.png")
 
         tk.Label(
             frame,

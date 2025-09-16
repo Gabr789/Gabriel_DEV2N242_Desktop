@@ -9,7 +9,7 @@ from tkinter import ttk
 
 
 
-class Ex10:
+class Ex0510:
     def __init__(self, janelaPrincipal=None):
         self.janela = tk.Toplevel(janelaPrincipal) if janelaPrincipal else tk.Tk()
         self.janela.title("Exercício 10")
@@ -79,6 +79,3 @@ class Ex10:
     def iniciar(self):
         if isinstance(self.janela, tk.Tk):
             self.janela.mainloop()
-
-exe = Ex10()
-exe.iniciar()

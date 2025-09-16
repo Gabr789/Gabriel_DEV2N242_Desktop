@@ -1,0 +1,1 @@
+from .exercicios import *

@@ -5,7 +5,7 @@ import tkinter as tk
 # JavaScript. Ao clicar em um botão, exiba todas as opções marcadas no Label.
 
 
-class Ex04:
+class Ex0504:
     def __init__(self, janelaPrincipal=None):
         self.janela = tk.Toplevel(janelaPrincipal) if janelaPrincipal else tk.Tk()
         self.janela.title("Exercício 4")
@@ -48,6 +48,3 @@ class Ex04:
     def iniciar(self):
         if isinstance(self.janela, tk.Tk):
             self.janela.mainloop()
-
-exe = Ex04()
-exe.iniciar()

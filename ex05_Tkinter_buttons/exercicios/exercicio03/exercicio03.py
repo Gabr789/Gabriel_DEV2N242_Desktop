@@ -6,7 +6,7 @@ from tkinter import ttk
 # PR. Ao clicar em um botão, mostre o estado selecionado no Label.
 
 
-class Ex03:
+class Ex0503:
     def __init__(self, janelaPrincipal=None):
         self.janela = tk.Toplevel(janelaPrincipal) if janelaPrincipal else tk.Tk()
         self.janela.title("Exercício 3")
@@ -40,6 +40,3 @@ class Ex03:
     def iniciar(self):
         if isinstance(self.janela, tk.Tk):
             self.janela.mainloop()
-
-exe = Ex03()
-exe.iniciar()

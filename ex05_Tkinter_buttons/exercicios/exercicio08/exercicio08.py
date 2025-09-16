@@ -5,7 +5,7 @@ import tkinter as tk
 # Cebola. Ao clicar no botão Montar Lanche, exiba os ingredientes selecionados. 
 
 
-class Ex08:
+class Ex0508:
     def __init__(self, janelaPrincipal=None):
         self.janela = tk.Toplevel(janelaPrincipal) if janelaPrincipal else tk.Tk()
         self.janela.title("Exercício 8")
@@ -52,6 +52,3 @@ class Ex08:
     def iniciar(self):
         if isinstance(self.janela, tk.Tk):
             self.janela.mainloop()
-
-exe = Ex08()
-exe.iniciar()

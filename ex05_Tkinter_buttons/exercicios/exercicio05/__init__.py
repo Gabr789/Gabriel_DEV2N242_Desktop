@@ -1,0 +1,1 @@
+from .exercicio05 import Ex0505

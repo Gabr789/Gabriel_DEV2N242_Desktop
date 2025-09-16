@@ -5,7 +5,7 @@ import tkinter as tk
 # PixUm botão Selecionar Ao clicar, mostre a forma de pagamento escolhida no Label.
 
 
-class Ex07:
+class Ex0507:
     def __init__(self, janelaPrincipal=None):
         self.janela = tk.Toplevel(janelaPrincipal) if janelaPrincipal else tk.Tk()
         self.janela.title("Exercício 7")
@@ -40,6 +40,3 @@ class Ex07:
     def iniciar(self):
         if isinstance(self.janela, tk.Tk):
             self.janela.mainloop()
-
-exe = Ex07()
-exe.iniciar()

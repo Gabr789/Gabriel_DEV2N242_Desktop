@@ -5,7 +5,7 @@ import tkinter as tk
 # Ao clicar em um botão de confirmação, mostre no Label o turno escolhido. 
 
 
-class Ex02:
+class Ex0502:
     def __init__(self, janelaPrincipal=None):
         self.janela = tk.Toplevel(janelaPrincipal) if janelaPrincipal else tk.Tk()
         self.janela.title("Exercício 2")
@@ -40,6 +40,3 @@ class Ex02:
     def iniciar(self):
         if isinstance(self.janela, tk.Tk):
             self.janela.mainloop()
-
-exe = Ex02()
-exe.iniciar()

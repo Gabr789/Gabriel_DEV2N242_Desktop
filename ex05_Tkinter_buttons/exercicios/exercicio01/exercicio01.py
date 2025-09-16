@@ -6,7 +6,7 @@ import tkinter as tk
 # marcadas.
 
 
-class Ex01:
+class Ex0501:
     def __init__(self, janelaPrincipal=None):
         self.janela = tk.Toplevel(janelaPrincipal) if janelaPrincipal else tk.Tk()
         self.janela.title("Exercício 1")
@@ -45,6 +45,3 @@ class Ex01:
     def iniciar(self):
         if isinstance(self.janela, tk.Tk):
             self.janela.mainloop()
-
-exe = Ex01()
-exe.iniciar()

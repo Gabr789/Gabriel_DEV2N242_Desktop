@@ -5,7 +5,7 @@ import tkinter as tk
 # Mostre a opção escolhida quando o botão Confirmar for clicado.
 
 
-class Ex05:
+class Ex0505:
     def __init__(self, janelaPrincipal=None):
         self.janela = tk.Toplevel(janelaPrincipal) if janelaPrincipal else tk.Tk()
         self.janela.title("Exercício 5")
@@ -40,6 +40,3 @@ class Ex05:
     def iniciar(self):
         if isinstance(self.janela, tk.Tk):
             self.janela.mainloop()
-
-exe = Ex05()
-exe.iniciar()

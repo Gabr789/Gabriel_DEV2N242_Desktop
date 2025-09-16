@@ -8,7 +8,7 @@ from tkinter import ttk
 # Pizza Média com massa Fina
 
 
-class Ex09:
+class Ex0509:
     def __init__(self, janelaPrincipal=None):
         self.janela = tk.Toplevel(janelaPrincipal) if janelaPrincipal else tk.Tk()
         self.janela.title("Exercício 9")
@@ -56,6 +56,3 @@ class Ex09:
     def iniciar(self):
         if isinstance(self.janela, tk.Tk):
             self.janela.mainloop()
-
-exe = Ex09()
-exe.iniciar()
