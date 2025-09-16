@@ -2,7 +2,7 @@ import tkinter as tk
 import os
 import sys
 from tkinter import messagebox
-from estilo02 import Estilos02
+from .estilo02 import Estilos02
 
 # Exercício 2  
 # Crie um formulário de login usando Frame, com os campos Usuário e Senha e um 
@@ -10,26 +10,28 @@ from estilo02 import Estilos02
 # 1234 ou de erro, se for diferente.
 
 
-class Ex02:
+class Ex0702:
     def __init__(self, janelaPrincipal=None):
         self.janela = tk.Toplevel(janelaPrincipal) if janelaPrincipal else tk.Tk()
         self.janela.geometry("350x550")
         self.janela.resizable(False, False)
         self.janela.title("Exercício 02")
         self.janela.configure(Estilos02.estiloJanela())
-
+        
+        self.usuario = "admin"
         self.senha = "1234"
 
         caminho = os.path.dirname(__file__)
 
 
         def testar():
-            valor = senha.get()
-            if valor == self.senha:
+            usuario_teste = usuario.get()
+            senha_teste = senha.get()
+            if (senha_teste == self.senha) and (usuario_teste == self.usuario):
                 messagebox.showinfo("Logado", "Login realizado com sucesso!")
                 sys.exit()
             else:
-                messagebox.showerror("Erro", "Senha Incorreta, tente novamente!")
+                messagebox.showerror("Erro", "Usuário ou senha incorretos, tente novamente!")
 
 
         """Frame de título e avatar"""
@@ -90,7 +92,8 @@ class Ex02:
 
         senha = tk.Entry(
             frame_campos,
-            **Estilos02.estiloEntry()
+            **Estilos02.estiloEntry(),
+            show="*"
         )
         senha.grid(row=2, column=1)
 
@@ -102,13 +105,9 @@ class Ex02:
             text="Entrar",
             **Estilos02.estiloBotao(),
             command=testar
-        ).grid(row=3, column=1)
+        ).grid(row=3, column=1, sticky="e")
 
 
     def iniciar(self):
         if isinstance(self.janela, tk.Tk):
             self.janela.mainloop()
-        
-
-exe02 = Ex02()
-exe02.iniciar()

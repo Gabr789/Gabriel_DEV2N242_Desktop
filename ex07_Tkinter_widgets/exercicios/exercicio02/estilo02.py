@@ -1,9 +1,3 @@
-
-
-# Todos os exercícios devem usar um módulo de estilização separado para aplicar 
-# cores,  
-# fontes ou tamanhos aos widgets.
-
 class Estilos02:
 
     FUNDO_JANELA = "white"
@@ -17,6 +11,7 @@ class Estilos02:
     COR_TEXTO = "white"
     
     FUNDO_BOTAO = "#dbdbff"
+    FONTE_BOTAO = "Arial", 10
 
 
     @classmethod
@@ -29,10 +24,6 @@ class Estilos02:
     def estiloFrame(cls):
         return {
             "bg": cls.FUNDO_FRAME,
-            # "highlightbackground": "black",
-            # "highlightthicknes": 3,
-            # "width": 350,
-            # "height": 500
         }
     
     @classmethod
@@ -68,7 +59,8 @@ class Estilos02:
     def estiloBotao(cls):
         return {
             "bg": cls.FUNDO_BOTAO,
-            "width": 30,
+            "font": cls.FONTE_BOTAO,
+            "width": 15,
             "height": 1
         }
 

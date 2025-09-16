@@ -27,9 +27,9 @@ class Ex0510:
 
 
             if curso and turno != "__nada__" and escolhas:
-                preferencias.config(text=f"Perfil criado com sucesso.\nVocê estudará o curso {curso} no turno da {turno}.\nVocê " + " e ".join(escolhas))
+                preferencias.config(text=f"Perfil criado com sucesso.\nVocê estudará o curso de {curso} no turno da {turno}.\nVocê " + " e ".join(escolhas))
             elif curso and turno != "__nada__":
-                preferencias.config(text=f"Perfil criado com sucesso.\nVocê estudará o curso {curso} no turno da {turno}.")
+                preferencias.config(text=f"Perfil criado com sucesso.\nVocê estudará o curso de {curso} no turno da {turno}.")
             else:
                 preferencias.config(text="Escolha o curso e o turno")
 
