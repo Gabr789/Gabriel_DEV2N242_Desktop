@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
+from estilo01 import Estilos01
 
 
 # Desafio 1 
@@ -40,11 +41,14 @@ class Ex0601:
 
 
 
-        frame_principal = tk.Frame(self.janela) # **Estilos01.estiloFramePrincipal()
+        frame_principal = tk.Frame(self.janela, **Estilos01.estiloFrame()) # **Estilos01.estiloFramePrincipal()
         frame_principal.pack()
 
 
-        tk.Label(frame_principal, text="Escolha o curso:").pack(pady=(20, 10), anchor="w") # **Estilos01.estiloLabel()
+        tk.Label(
+            frame_principal,
+            text="Escolha o curso:"
+            ).pack(pady=(20, 10), anchor="w") # **Estilos01.estiloLabel()
 
         cursos = ["ADS", "Jogos", "Redes"]
         self.combo = ttk.Combobox(frame_principal, values=cursos, state="readonly")

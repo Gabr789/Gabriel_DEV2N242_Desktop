@@ -1,12 +1,15 @@
 import tkinter as tk
 from tkinter import ttk
+import os
 
 root = tk.Tk()
 root.title("Complete Your Profile")
 root.resizable(False, False)
 
+caminho = os.path.dirname(__file__)
+
 # Profile image
-image = tk.PhotoImage(file="profile.png").subsample(6, 6)
+image = tk.PhotoImage(file=caminho + r"\profile.png").subsample(6, 6)
 tk.Label(
     root,
     image=image,

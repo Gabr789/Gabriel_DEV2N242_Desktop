@@ -115,8 +115,6 @@ class MenuModulo02():
 
 
 
-    
-
     def iniciar(self):
         self.janela.mainloop()
 

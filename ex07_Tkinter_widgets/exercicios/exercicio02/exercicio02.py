@@ -1,6 +1,5 @@
 import tkinter as tk
 import os
-import sys
 from tkinter import messagebox
 from .estilo02 import Estilos02
 
@@ -29,7 +28,7 @@ class Ex0702:
             senha_teste = senha.get()
             if (senha_teste == self.senha) and (usuario_teste == self.usuario):
                 messagebox.showinfo("Logado", "Login realizado com sucesso!")
-                sys.exit()
+                self.janela.destroy()
             else:
                 messagebox.showerror("Erro", "Usuário ou senha incorretos, tente novamente!")
 

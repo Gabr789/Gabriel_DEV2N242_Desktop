@@ -6,4 +6,15 @@
 class Estilos01:
     FUNDO_JANELA = "white"
 
-    FUNDO_FRAME = "#10"
+    FUNDO_FRAME = "#101010"
+
+
+
+    @classmethod
+    def estiloFrame(cls):
+        return {
+            "bg": cls.FUNDO_FRAME,
+            "height": 450,
+            "width": 300
+        }
+
