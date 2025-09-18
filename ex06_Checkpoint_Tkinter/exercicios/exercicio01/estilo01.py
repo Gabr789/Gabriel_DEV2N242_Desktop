@@ -4,11 +4,18 @@
 
 
 class Estilos01:
-    FUNDO_JANELA = "white"
+    FUNDO_JANELA = "#addbff"
 
-    FUNDO_FRAME = "#101010"
+    FUNDO_FRAME = "#a0aaff"
 
 
+
+    @classmethod
+    def estiloJanela(cls):
+        return {
+            "bg": cls.FUNDO_JANELA
+        }
+    
 
     @classmethod
     def estiloFrame(cls):
@@ -16,5 +23,54 @@ class Estilos01:
             "bg": cls.FUNDO_FRAME,
             "height": 450,
             "width": 300
+        }
+
+
+    @classmethod
+    def estiloLabel(cls):
+        return {
+            "bg": cls.FUNDO_FRAME
+        }
+    
+
+    @classmethod
+    def estiloEntry(cls):
+        return {
+            "bg": cls.FUNDO_FRAME
+        }
+    
+
+    @classmethod
+    def estiloButton(cls):
+        return {
+            "bg": cls.FUNDO_JANELA
+        }
+    
+
+    @classmethod
+    def estiloRadio(cls):
+        return {
+            "bg": cls.FUNDO_FRAME
+        }
+    
+
+    @classmethod
+    def estiloCheck(cls):
+        return {
+            "bg": cls.FUNDO_FRAME
+        }
+    
+
+    @classmethod
+    def estiloLabel(cls):
+        return {
+            "bg": cls.FUNDO_FRAME
+        }
+    
+
+    @classmethod
+    def estiloLabel(cls):
+        return {
+            "bg": cls.FUNDO_FRAME
         }
 

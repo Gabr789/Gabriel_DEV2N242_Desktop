@@ -18,6 +18,7 @@ class Ex0601:
         self.janela = tk.Toplevel(master) if master else tk.Tk()
         self.janela.title("Exercício 1")
         self.janela.geometry("600x500")
+        self.janela.config(**Estilos01.estiloJanela())
 
 
         def confirmar():
@@ -39,44 +40,85 @@ class Ex0601:
 
 
 
+        frame_principal = tk.Frame(self.janela, **Estilos01.estiloFrame())
+        frame_principal.pack(pady=50)
 
-
-        frame_principal = tk.Frame(self.janela, **Estilos01.estiloFrame()) # **Estilos01.estiloFramePrincipal()
-        frame_principal.pack()
 
 
         tk.Label(
             frame_principal,
+            **Estilos01.estiloLabel(),
             text="Escolha o curso:"
-            ).pack(pady=(20, 10), anchor="w") # **Estilos01.estiloLabel()
+            ).pack(pady=(20, 10), padx=40, anchor="w")
 
         cursos = ["ADS", "Jogos", "Redes"]
         self.combo = ttk.Combobox(frame_principal, values=cursos, state="readonly")
-        self.combo.pack(anchor="w")
+        self.combo.pack(padx=40, anchor="w")
 
 
 
-        tk.Label(frame_principal, text="Escolha o turno:").pack(pady=(30, 10), anchor="w") # **Estilos01.estiloLabel()
+        tk.Label(
+            frame_principal,
+            **Estilos01.estiloLabel(),
+            text="Escolha o turno:"
+            ).pack(pady=(30, 10), padx=40, anchor="w")
 
         turnos = tk.StringVar(value="__nada__")
-        tk.Radiobutton(frame_principal, text="Manhã", variable=turnos, value="Manhã").pack(anchor="w") # **Estilos01.estiloRadio()
-        tk.Radiobutton(frame_principal, text="Tarde", variable=turnos, value="Tarde").pack(anchor="w") # **Estilos01.estiloRadio()
-        tk.Radiobutton(frame_principal, text="Noite", variable=turnos, value="Noite").pack(anchor="w") # **Estilos01.estiloRadio()
+        tk.Radiobutton(
+            frame_principal,
+            **Estilos01.estiloRadio(),
+            text="Manhã",
+            variable=turnos,
+            value="Manhã"
+            ).pack(padx=40, anchor="w")
+        tk.Radiobutton(
+            frame_principal,
+            **Estilos01.estiloRadio(),
+            text="Tarde",
+            variable=turnos,
+            value="Tarde"
+            ).pack(padx=40, anchor="w")
+        tk.Radiobutton(
+            frame_principal,
+            **Estilos01.estiloRadio(),
+            text="Noite",
+            variable=turnos,
+            value="Noite"
+            ).pack(padx=40, anchor="w")
 
 
         
-        tk.Label(frame_principal, text="Marque as caixas que se aplicam:").pack(pady=(30, 10), anchor="w") # Estilos01.estiloLabel()
+        tk.Label(
+            frame_principal,
+            **Estilos01.estiloLabel(),
+            text="Marque as caixas que se aplicam:"
+            ).pack(pady=(30, 10), padx=40, anchor="w")
 
         self.participa = tk.BooleanVar()
         self.gosta = tk.BooleanVar()
+        tk.Checkbutton(
+            frame_principal,
+            **Estilos01.estiloCheck(),
+            text="Participa do Discord",
+            variable=self.participa
+            ).pack(padx=40, anchor="w")
+        tk.Checkbutton(
+            frame_principal,
+            **Estilos01.estiloCheck(),
+            text="Gosta de Programação",
+            variable=self.gosta
+            ).pack(padx=40, anchor="w")
 
-        tk.Checkbutton(frame_principal, text="Participa do Discord", variable=self.participa).pack(anchor="w") # **Estilos01.estiloCheck()
-        tk.Checkbutton(frame_principal, text="Gosta de Programação", variable=self.gosta).pack(anchor="w") # **Estilos01.estiloCheck()
 
 
-        tk.Button(frame_principal, text="Enviar", command=confirmar).pack(pady=30, anchor="e") # **Estilos01.estiloButton()
+        tk.Button(
+            frame_principal,
+            **Estilos01.estiloButton(),
+            text="Enviar",
+            command=confirmar
+            ).pack(pady=30, padx=40, anchor="e")
 
-        """Configurar os estilos"""
+        """Configurar as fontes"""
 
 
 
