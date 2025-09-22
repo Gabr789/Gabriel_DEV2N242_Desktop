@@ -77,3 +77,5 @@ from exercicios.exercicios07.exercicio09.exercicio09 import Ex9_7
 from exercicios.exercicios07.exercicio10.exercicio10 import Ex10_7
 
 from gerenciadores.gerenciadortexto.main import TelaArquivos
+from gerenciadores.gerenciadorword.main import TelaArquivosWord
+from gerenciadores.selecionador_arquivo.selecionador import TelaFileDialog

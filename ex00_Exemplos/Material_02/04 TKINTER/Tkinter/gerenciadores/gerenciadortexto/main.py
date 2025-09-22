@@ -2,7 +2,7 @@ import os
 import tkinter as tk
 from tkinter import scrolledtext, messagebox
 from gerenciadores.gerenciadortexto.gerenciador_texto import GerenciadorTexto
-
+from tkinter import filedialog
 class TelaArquivos:
     def __init__(self, master=None):
        
@@ -11,7 +11,7 @@ class TelaArquivos:
         self.janela.geometry("700x600")
 
       
-        caminho_icone = os.path.join(os.path.dirname(__file__), "../../../logo.ico")
+        caminho_icone = os.path.join(os.path.dirname(__file__), "../../logo.ico")
         if os.path.exists(caminho_icone):
             self.janela.iconbitmap(caminho_icone)
 
@@ -116,6 +116,9 @@ class TelaArquivos:
         tela_edicao = tk.Toplevel(self.janela)
         tela_edicao.title("Tela de Edição de Arquivos")
         tela_edicao.geometry("600x500")
+        caminho_icone = os.path.join(os.path.dirname(__file__), "../../logo.ico")
+        if os.path.exists(caminho_icone):
+            tela_edicao.iconbitmap(caminho_icone)
 
         
         tk.Label(tela_edicao, text="Nome do arquivo:").pack(pady=(10, 0))
@@ -128,7 +131,27 @@ class TelaArquivos:
         area_texto = scrolledtext.ScrolledText(tela_edicao, wrap=tk.WORD, width=70, height=15)
         area_texto.pack(padx=10, pady=5)
 
-        # Funções locais
+        def selecionar_arquivo_edicao():
+         caminho_arquivo = filedialog.askopenfilename(
+            title="Selecionar arquivo para edição",
+            filetypes=[("Arquivos de texto", "*.txt"), ("Todos os arquivos", "*.*")]
+         )
+       
+         if caminho_arquivo:
+                nome_arquivo = os.path.basename(caminho_arquivo)
+                entry_nome.delete(0, tk.END)
+                entry_nome.insert(0, nome_arquivo)
+                try:
+                    with open(caminho_arquivo, 'r', encoding='utf-8') as arquivo:
+                        conteudo = arquivo.read()
+                    area_texto.delete("1.0", tk.END)
+                    area_texto.insert(tk.INSERT, conteudo)
+                except Exception as e:
+                    messagebox.showerror("Erro", f"Erro ao abrir o arquivo:\n{str(e)}")
+
+        
+        
+        
         def criar():
             nome = entry_nome.get()
             conteudo = area_texto.get("1.0", tk.END)
@@ -157,6 +180,7 @@ class TelaArquivos:
         tk.Button(tela_edicao, text="Criar/Atualizar", command=criar).pack(pady=5)
         tk.Button(tela_edicao, text="Ler", command=ler).pack(pady=5)
         tk.Button(tela_edicao, text="Excluir", command=excluir).pack(pady=5)
+        tk.Button(tela_edicao, text="Selecionar Arquivo", command=selecionar_arquivo_edicao).pack(pady=5)
 
     def iniciar(self):
         self.janela.mainloop()

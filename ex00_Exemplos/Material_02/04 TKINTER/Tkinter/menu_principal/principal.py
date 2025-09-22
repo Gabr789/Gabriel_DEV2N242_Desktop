@@ -97,6 +97,8 @@ class MenuPrincipal:
 
       
         menu_arquivos.add_command(label="TXT", command=self.gerenciador_texto)
+        menu_arquivos.add_command(label="Word", command=self.gerenciador_texto_word)
+        menu_arquivos.add_command(label="Selecionador de Arquivo", command=self.selecionador_arquivo)
 
 
         barra_menu.add_cascade(label="Arquivos", menu=menu_arquivos)
@@ -296,7 +298,17 @@ class MenuPrincipal:
 
     def gerenciador_texto(self):
         TelaArquivos(self.janela).iniciar()
+    
+    
+    def gerenciador_texto_word(self):
+       TelaArquivosWord(self.janela).iniciar()
 
+
+    def selecionador_arquivo(self):
+       self.janela.withdraw()
+       tela_selecionador_arquivo = TelaFileDialog(master=self.janela)
+       tela_selecionador_arquivo.iniciar()
+       
 
 
 

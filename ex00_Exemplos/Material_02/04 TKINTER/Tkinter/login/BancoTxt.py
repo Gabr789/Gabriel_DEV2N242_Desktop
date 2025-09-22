@@ -8,13 +8,13 @@ class SimuladorBancoTxt:
 
     def _criar_arquivo_se_nao_existir(self):
         if not os.path.exists(self.caminho):
-            with open(self.caminho, 'w', encoding='utf-8') as arquivo:
-                arquivo.write("admin:123\n") 
+            with open(self.caminho, 'w', encoding='utf-8') as f:
+                f.write("admin:123\n") 
 
     def carregar_usuarios(self):
         usuarios = {}
-        with open(self.caminho, 'r', encoding='utf-8') as arquivo:
-            for linha in arquivo:
+        with open(self.caminho, 'r', encoding='utf-8') as f:
+            for linha in f:
                 if ':' in linha:
                     usuario, senha = linha.strip().split(':', 1)
                     usuarios[usuario] = senha
@@ -24,8 +24,8 @@ class SimuladorBancoTxt:
         usuarios = self.carregar_usuarios()
         if usuario in usuarios:
             raise ValueError("Usuário já existe!")
-        with open(self.caminho, 'a', encoding='utf-8') as arquivo:
-            arquivo.write(f"{usuario}:{senha}\n")
+        with open(self.caminho, 'a', encoding='utf-8') as f:
+            f.write(f"{usuario}:{senha}\n")
 
     def validar_credenciais(self, usuario, senha):
         usuarios = self.carregar_usuarios()

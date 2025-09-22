@@ -21,7 +21,7 @@ class Estilos01:
     def estiloFrame(cls):
         return {
             "bg": cls.FUNDO_FRAME,
-            "height": 450,
+            "height": 550,
             "width": 300
         }
 
@@ -36,7 +36,7 @@ class Estilos01:
     @classmethod
     def estiloEntry(cls):
         return {
-            "bg": cls.FUNDO_FRAME
+
         }
     
 
@@ -56,13 +56,6 @@ class Estilos01:
 
     @classmethod
     def estiloCheck(cls):
-        return {
-            "bg": cls.FUNDO_FRAME
-        }
-    
-
-    @classmethod
-    def estiloLabel(cls):
         return {
             "bg": cls.FUNDO_FRAME
         }

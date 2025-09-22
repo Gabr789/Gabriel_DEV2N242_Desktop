@@ -17,7 +17,7 @@ class Ex0601:
     def __init__(self, master=None):
         self.janela = tk.Toplevel(master) if master else tk.Tk()
         self.janela.title("Exercício 1")
-        self.janela.geometry("600x500")
+        self.janela.geometry("600x650")
         self.janela.config(**Estilos01.estiloJanela())
 
 
@@ -42,6 +42,29 @@ class Ex0601:
 
         frame_principal = tk.Frame(self.janela, **Estilos01.estiloFrame())
         frame_principal.pack(pady=50)
+
+        tk.Label(
+            frame_principal,
+            **Estilos01.estiloLabel(),
+            text="Digite seu nome:"
+            ).pack(pady=(20, 10), padx=40, anchor="w")
+        nome = tk.Entry(
+            frame_principal,
+            **Estilos01.estiloEntry(),
+        )
+        nome.pack(padx=40, anchor="w")
+
+
+        tk.Label(
+            frame_principal,
+            **Estilos01.estiloLabel(),
+            text="Digite sua idade:"
+            ).pack(pady=(20, 10), padx=40, anchor="w")
+        idade = tk.Entry(
+            frame_principal,
+            **Estilos01.estiloEntry(),
+        )
+        idade.pack(padx=40, anchor="w")
 
 
 
