@@ -1,15 +1,16 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
-from .estilo01 import Estilos01
+from .estilo02 import Estilos02
 
 
-# Desafio 1 
-# Crie uma janela com campos Entry para nome e idade, uma Combobox com os 
-# cursos: ADS, Jogos, Redes, Radiobuttons para turno: Manhã, Tarde, Noite, e 
-# Checkbuttons para Gosta de programação e Participa do Discord. 
-# Ao clicar no botão Enviar, exiba todas as informações em uma nova janela. Se algum 
-# campo estiver vazio, mostre a mensagem "Preencha todos os campos!".
+# Desafio 2 
+# Crie uma interface com uma Combobox para o tamanho da pizza: Pequena, Média, 
+# Grande, Radiobuttons para o tipo de massa: Fina, Tradicional, e Checkbuttons para 
+# ingredientes: Queijo, Calabresa, Tomate, Cebola. 
+# Adicione também Radiobuttons para a forma de pagamento: Dinheiro, Cartão, Pix. 
+# Ao clicar no botão Finalizar Pedido, exiba no Label o pedido completo com as 
+# escolhas feitas. 
 
 
 
@@ -18,7 +19,7 @@ class Ex0601:
         self.janela = tk.Toplevel(master) if master else tk.Tk()
         self.janela.title("Exercício 1")
         self.janela.geometry("600x700")
-        self.janela.config(**Estilos01.estiloJanela())
+        self.janela.config(**Estilos02.estiloJanela())
 
 
         def confirmarNome(nome):
@@ -68,8 +69,105 @@ class Ex0601:
 
         """Frame"""
 
-        frame_principal = tk.Frame(self.janela, **Estilos01.estiloFrame())
+        frame_principal = tk.Frame(self.janela, **Estilos02.estiloFrame())
         frame_principal.pack(pady=50)
+
+
+
+        # Desafio 2 
+        # Crie uma interface com uma Combobox para o tamanho da pizza: Pequena, Média, 
+        # Grande, Radiobuttons para o tipo de massa: Fina, Tradicional, e Checkbuttons para 
+        # ingredientes: Queijo, Calabresa, Tomate, Cebola. 
+        # Adicione também Radiobuttons para a forma de pagamento: Dinheiro, Cartão, Pix. 
+        # Ao clicar no botão Finalizar Pedido, exiba no Label o pedido completo com as 
+        # escolhas feitas. 
+
+        """Tamanho"""
+
+        tk.Label(
+            frame_principal,
+            **Estilos02.estiloLabel(),
+            text="Escolha o tamanho da pizza:"
+            ).pack(pady=(20, 10), padx=40, anchor="w")
+
+
+        tamanhos = ["pequena", "média", "grande"]
+
+        self.tamanho = ttk.Combobox(
+            frame_principal,
+            **Estilos02.estiloCombo(),
+            values=tamanhos,
+            state="readonly"
+            )
+        self.tamanho.pack(padx=40, anchor="w")
+
+
+
+        """Tipo de massa"""
+
+        tk.Label(
+            frame_principal,
+            **Estilos02.estiloLabel(),
+            text="Escolha o tipo de massa da pizza:"
+        ).pack(pady=(20, 10), padx=40, anchor="w")
+
+
+        tipos_massa = tk.StringVar(value="__nada__")
+
+        tk.Radiobutton(
+            frame_principal,
+            **Estilos02.estiloRadio(),
+            text="Fina",
+            variable=tipos_massa,
+            value="fina"
+        ).pack(padx=40, anchor="w")
+
+        tk.Radiobutton(
+            frame_principal,
+            **Estilos02.estiloRadio(),
+            text="Tradicional",
+            variable=tipos_massa,
+            value="tradicional"
+        ).pack(padx=40, anchor="w")
+
+
+
+        """Ingredientes"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        tk.Radiobutton(
+            frame_principal,
+            **Estilos02.estiloRadio(),
+            text="Grande",
+            variable=tamanhos,
+            value="grande"
+        ).pack(padx=40, anchor="w")
+
+
+
+
+        tk.Radiobutton(
+            frame_principal,
+            **Estilos01.estiloRadio(),
+            text="Manhã",
+            variable=turnos,
+            value="Manhã"
+            ).pack(padx=40, anchor="w")
 
 
 
