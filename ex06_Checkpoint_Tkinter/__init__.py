@@ -1,1 +1,1 @@
-from .exercicios import Ex0601
+from .exercicios import Ex0601, Ex0602

@@ -1,6 +1,6 @@
 
 
-class Estilos02:
+class Estilos03:
     FUNDO_JANELA = "#addbff"
 
     FUNDO_FRAME = "#a0aaff"
