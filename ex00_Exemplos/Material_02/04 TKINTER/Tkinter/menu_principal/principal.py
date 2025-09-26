@@ -40,11 +40,17 @@ class MenuPrincipal:
         submenu_widgets_selecao.add_command(label="Check", command=self.abrir_tela_check)
         submenu_widgets_selecao.add_command(label="List", command=self.abrir_tela_list)
         submenu_widgets_selecao.add_command(label="Radio", command=self.abrir_tela_radio)
+        
+        submenu_widgets_ttk = tk.Menu(menu_widgets, tearoff=0)
+        submenu_widgets_ttk.add_command(label="Árvore", command=self.abrir_tela_arvore)
+
+
 
         menu_widgets.add_cascade(label="Widgets Básicos", menu=submenu_widgets_basicos)
         menu_widgets.add_cascade(label="Widgets Entrada", menu=submenu_widgets_entrada )
         menu_widgets.add_cascade(label="Widgets interface", menu=submenu_widgets_interface)
         menu_widgets.add_cascade(label="Widgets selecao", menu=submenu_widgets_selecao)
+        menu_widgets.add_cascade(label="Widgets ttk", menu=submenu_widgets_ttk)
 
 
    
@@ -135,6 +141,11 @@ class MenuPrincipal:
      
         barra_menu.add_cascade(label="Exercícios", menu=menu_exercicios)
 
+        menu_usuarios = tk.Menu(barra_menu, tearoff=0)
+        menu_usuarios.add_command(label="Listar Usuários", command=self.abrir_lista_usuarios)
+
+        barra_menu.add_cascade(label="Usuários", menu=menu_usuarios)
+
        
         self.janela.config(menu=barra_menu)
          
@@ -207,7 +218,10 @@ class MenuPrincipal:
 
 
 
-    
+    def abrir_lista_usuarios(self):
+      
+        TelaListaUsuarios(self.janela).iniciar()
+
         
     
     def abrir_tela_widgets(self):
@@ -302,6 +316,9 @@ class MenuPrincipal:
     
     def gerenciador_texto_word(self):
        TelaArquivosWord(self.janela).iniciar()
+
+    def abrir_tela_arvore(self):
+        TelaTreeview(self.janela).iniciar()
 
 
     def selecionador_arquivo(self):

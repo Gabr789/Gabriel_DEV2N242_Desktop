@@ -4,11 +4,11 @@ from tkinter import messagebox
 import os
 from PIL import Image, ImageTk
 from Tkinter.menu_principal.principal import MenuPrincipal  
-
+from imports import *
 
 class TelaLogin:
     def __init__(self, banco):
-        self.banco = banco  
+        self.banco = BancoMySQL()
         self.janela = Tk()
         self.janela.title("Login")
         self.janela.geometry("300x400")

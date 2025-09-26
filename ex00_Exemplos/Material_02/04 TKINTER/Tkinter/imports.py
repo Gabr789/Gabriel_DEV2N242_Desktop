@@ -29,6 +29,8 @@ from widgets.widgets_selecao.menu_list.list import TelaListbox
 
 from widgets.widgets_interface.menu.menu import TelaMenu
 
+from widgets.widgets_ttk.arvore.treeview import TelaTreeview
+
 from eventos_Interacoes.mouse.menu_clique.clique import TelaEventoClick
 from eventos_Interacoes.mouse.menu_entrada_saida.entrada_saida import TelaEventoEnterLeave
 from eventos_Interacoes.mouse.menu_movimentomouse.movimentomouse import TelaEventoMotion
@@ -79,3 +81,7 @@ from exercicios.exercicios07.exercicio10.exercicio10 import Ex10_7
 from gerenciadores.gerenciadortexto.main import TelaArquivos
 from gerenciadores.gerenciadorword.main import TelaArquivosWord
 from gerenciadores.selecionador_arquivo.selecionador import TelaFileDialog
+
+from usuarios.main import TelaListaUsuarios
+from login.BancoMySQL import BancoMySQL
+from Tkinter.login.BancoMySQL import BancoMySQL
