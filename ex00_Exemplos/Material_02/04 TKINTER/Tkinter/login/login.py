@@ -97,6 +97,7 @@ class TelaLogin:
             return
 
         if self.banco.validar_credenciais(usuario, senha):
+            self.banco.registrar_login(usuario)  
             self.janela.withdraw()
             app = MenuPrincipal(self.janela)
             app.iniciar()

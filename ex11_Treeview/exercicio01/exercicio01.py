@@ -21,3 +21,7 @@ class Ex1101:
     def iniciar(self):
         if isinstance(self.janela, tk.Tk):
             self.janela.mainloop()
+
+
+app = Ex1101()
+app.iniciar()
