@@ -99,15 +99,15 @@ class TelaLogin:
         if self.banco.validar_credenciais(usuario, senha):
             self.banco.registrar_login(usuario)  
             self.janela.withdraw()
-            app = MenuPrincipal(self.janela)
+            app = MenuPrincipal(self.janela, usuario, self.banco)
             app.iniciar()
         else:
-            self.erro_login("Usuário ou senha incorretos, Amigo!")
+            self.erro_login("Usuário ou senha incorretos.")
 
     def erro_login(self, mensagem):
         self.tentativas += 1
         if self.tentativas >= 3:
-            messagebox.showerror("Erro", "Amigo, dá uma olhada na linha 75 de login.py")
+            messagebox.showerror("Erro","Número de tentativas excedidas.")
             self.tentativas = 0
         else:
             messagebox.showerror("Erro", mensagem)
@@ -140,7 +140,8 @@ class TelaLogin:
                 return
 
             try:
-                self.banco.salvar_usuario(novo_usuario, nova_senha)
+               
+                self.banco.salvar_usuario(novo_usuario, nova_senha, grupo_nome="alunos")
                 messagebox.showinfo("Sucesso", f"Usuário '{novo_usuario}' cadastrado com sucesso!")
                 cadastro.destroy()
             except ValueError as e:

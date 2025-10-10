@@ -45,7 +45,7 @@ class Ex0702:
             frame,
             image=self.imagem,
             **Estilos02.estiloLabelImagem()
-        ).pack(padx=10, pady=50)
+        ).pack(padx=10, pady=40)
 
 
         """Frame de login"""
