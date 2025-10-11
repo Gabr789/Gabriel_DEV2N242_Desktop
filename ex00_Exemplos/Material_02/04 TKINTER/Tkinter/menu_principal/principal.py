@@ -100,11 +100,10 @@ class MenuPrincipal:
         menu_arquivos.add_command(label="Excel", command=self.gerenciador_arquvivo_excel)
         barra_menu.add_cascade(label="Arquivos", menu=menu_arquivos)
 
-        # Frame para os exercícios
+     
         self.frame_exercicio = tk.Frame(self.janela)
         self.frame_exercicio.pack(expand=True, fill="both", padx=10, pady=10)
 
-        # Menu Exercícios
         menu_exercicios = tk.Menu(barra_menu, tearoff=0)
 
         submenu_lista4 = tk.Menu(menu_exercicios, tearoff=0)
@@ -125,16 +124,16 @@ class MenuPrincipal:
 
         barra_menu.add_cascade(label="Exercícios", menu=menu_exercicios)
 
-        # **Menu Usuários: aparece apenas se usuário NÃO for do grupo 'alunos'**
+      
         if "alunos" not in grupos:
             menu_usuarios = tk.Menu(barra_menu, tearoff=0)
             menu_usuarios.add_command(label="Listar Usuários", command=self.abrir_lista_usuarios)
             barra_menu.add_cascade(label="Usuários", menu=menu_usuarios)
 
-        # Configura o menu na janela
+
         self.janela.config(menu=barra_menu)
 
-        # Dicionário dos exercícios (sem alterar)
+      
         self.exercicios = {
             4: {
                 1: Ex1,

@@ -1,4 +1,51 @@
 
+
+
+
+Reorganizar o github e as pastas e arquivos, para que fiquem bem separados.
+Acho que o ideal poderia ser criar duas pastas:
+Uma para exemplos, outra para exercícios.
+Mas não sei.
+
+Seria interessante pensar muito bem nisso, talvez até antes de começar a codar.
+
+
+Seguindo, acho que o pacote com o main poderia ser dividido assim:
+
+exercicios
+main.py
+login.py
+bancoMySQL.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Cada exercício deve ficar em submenus dentro de menus
 Criar um main que dê acesso a todos os exercícios
 Separar modulo1 de modulo2

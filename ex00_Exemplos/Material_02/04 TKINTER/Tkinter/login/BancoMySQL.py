@@ -10,7 +10,7 @@ class BancoMySQL:
         cnx = mysql.connector.connect(
             host='127.0.0.1',
             user='root',
-            password='teste'
+            password=''
         )
         cursor = cnx.cursor()
         cursor.execute('SELECT COUNT(*) FROM information_schema.SCHEMATA WHERE SCHEMA_NAME = "sistema_login";')
@@ -21,7 +21,7 @@ class BancoMySQL:
             cnx = mysql.connector.connect(
                 host='127.0.0.1',
                 user='root',
-                password='teste'
+                password=''
             )
             cursor = cnx.cursor()
             cursor.execute('CREATE DATABASE sistema_login;')
@@ -32,7 +32,7 @@ class BancoMySQL:
             self.conexao = mysql.connector.connect(
                 host='localhost',
                 user='root',
-                password='teste',
+                password='',
                 database='sistema_login'
             )
             self.cursor = self.conexao.cursor()

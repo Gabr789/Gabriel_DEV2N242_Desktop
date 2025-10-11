@@ -1,5 +1,5 @@
 import tkinter as tk
-from imports import *
+from imports_main import *
 
 class MenuModulo02():
     def __init__(self):
